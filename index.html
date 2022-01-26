@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./bootstrap.min.css">
+    <title>test-geolocation</title>
+</head>
+<body>
+<h1>Пример определение геолокаций на стороне клиента</h1>
+
+<button type="button" class="btn btn-outline-success" id="but">Опредилить геолокацию</button>
+<div id="geo">
+
+</div>
+<script>
+    document.getElementById("but").onclick = ()=>{
+        navigator.geolocation.getCurrentPosition((position)=>{
+            console.log(position)
+
+            console.log(position.coords.longitude)
+            console.log(position.coords.latitude)
+            document.getElementById("geo").innerHTML = `Текушая долгота: ${position.coords.longitude}, текушая широта: ${position.coords.latitude}`
+        })
+
+    }
+
+</script>
+</body>
+</html>
